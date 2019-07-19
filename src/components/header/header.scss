@@ -1,0 +1,28 @@
+.header {
+  width: 100%;
+  padding: 10px 0;
+  background: aliceblue;
+
+  .nav-menu {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+
+    .nav-link {
+      padding: 20px 50px;
+      color: #3860a6;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      &:hover {
+        color: #0000bb;
+        cursor: pointer;
+      }
+
+      &:focus {
+        color: #0000bb;
+      }
+    }
+  }
+}

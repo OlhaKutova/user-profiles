@@ -1,0 +1,26 @@
+[
+   {
+      "id": 1,
+      "name": "Denis",
+      "password": "Denis1",
+      "lastLoginTime": "",
+      "loginTimeFrame": "",
+      "isLoggedIn": true
+   },
+   {
+      "id": 2,
+      "name": "Ivan",
+      "password": "Ivan22",
+      "lastLoginTime": "",
+      "loginTimeFrame": "",
+      "isLoggedIn": false
+   },
+   {
+      "id": 3,
+      "name": "Maria",
+      "password": "Maria3",
+      "lastLoginTime": "",
+      "loginTimeFrame": "",
+      "isLoggedIn": false
+   }
+]
