@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import './user-log-out.scss';
 
 
-const UserIsNotLoggedIn = () => {
+const UserLogOut = () => {
    return (
       <p>You should
          <Link to='/login'> login </Link>
@@ -12,4 +13,4 @@ const UserIsNotLoggedIn = () => {
    )
 };
 
-export default UserIsNotLoggedIn;
+export default UserLogOut;

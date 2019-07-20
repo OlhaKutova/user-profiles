@@ -1,19 +1,28 @@
-import React, { Component } from 'react';
-import {connect} from "react-redux";
-import UserLoggedIn from "./userLoggedIn/userLoggedIn"
-import UserIsNotLoggedIn from "./userIsNotLoggedIn/user-is-not-logged-in";
+import React, {Component, Fragment} from 'react';
+import UserLoggedIn from "./user-logged-in/user-logged-in";
 import './profile.scss';
+import {connect} from "react-redux";
+import UserLogOut from "./user-log-out/user-log-out";
 
 class Profile extends Component {
 
    render() {
+      const {isLoggedIn} = this.props.activeUser;
+
       return (
-         <div>
-            profile
-         </div>
+        <Fragment>
+           {isLoggedIn
+           ? <UserLoggedIn/>
+           : <UserLogOut/>}
+        </Fragment>
       );
    }
 }
 
+const mapStateToProps = (state) => {
+   return {
+      activeUser: state.usersData.activeUser
+   }
+};
 
-export default Profile;
+export default connect(mapStateToProps, {})(Profile);

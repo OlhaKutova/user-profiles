@@ -4,3 +4,17 @@
   box-sizing: border-box;
   font-family: 'Source Sans Pro', sans-serif;
 }
+
+button {
+  border-radius: 3px;
+  border: none;
+  background: #376995;
+  text-transform: uppercase;
+
+  &:hover {
+    cursor: pointer;
+    outline: none;
+    background: #033966;
+    transition: 0.5s;
+  }
+}

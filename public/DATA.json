@@ -3,22 +3,62 @@
       "id": 1,
       "name": "Denis",
       "password": "Denis1",
+      "lastLoginTime": "10am",
+      "loginTimeFrame": "5pm",
+      "isLoggedIn": true
+   },
+   {
+      "id": 2,
+      "name": "Bogdan",
+      "password": "Bogdan2",
       "lastLoginTime": "",
       "loginTimeFrame": "",
       "isLoggedIn": true
    },
    {
-      "id": 2,
-      "name": "Ivan",
-      "password": "Ivan22",
+      "id": 3,
+      "name": "Marina",
+      "password": "Marina3",
+      "lastLoginTime": "",
+      "loginTimeFrame": "",
+      "isLoggedIn": true
+   },
+   {
+      "id": 4,
+      "name": "Valentin",
+      "password": "Valentin4",
       "lastLoginTime": "",
       "loginTimeFrame": "",
       "isLoggedIn": false
    },
    {
-      "id": 3,
-      "name": "Maria",
-      "password": "Maria3",
+      "id": 5,
+      "name": "Angela",
+      "password": "Angela5",
+      "lastLoginTime": "",
+      "loginTimeFrame": "",
+      "isLoggedIn": false
+   },
+   {
+      "id": 6,
+      "name": "Vladislav",
+      "password": "Vladislav6",
+      "lastLoginTime": "",
+      "loginTimeFrame": "",
+      "isLoggedIn": false
+   },
+   {
+      "id": 7,
+      "name": "Valentina",
+      "password": "Valentina7",
+      "lastLoginTime": "",
+      "loginTimeFrame": "",
+      "isLoggedIn": false
+   },
+   {
+      "id": 8,
+      "name": "Christina",
+      "password": "Christina8",
       "lastLoginTime": "",
       "loginTimeFrame": "",
       "isLoggedIn": false

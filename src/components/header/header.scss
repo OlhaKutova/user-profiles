@@ -1,27 +1,27 @@
 .header {
   width: 100%;
   padding: 10px 0;
-  background: aliceblue;
+  background: #3f75a4;
 
   .nav-menu {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-around;
 
     .nav-link {
       padding: 20px 50px;
-      color: #3860a6;
-      font-weight: bold;
+      height: 50px;
+      color: #ffffff;
+      text-shadow: 0 0 3px #023967;
+      letter-spacing: 0.1rem;
+      font-weight: 100;
       text-transform: uppercase;
       text-decoration: none;
 
       &:hover {
-        color: #0000bb;
         cursor: pointer;
-      }
-
-      &:focus {
-        color: #0000bb;
+        border-bottom: 1px solid #eefaff;
+        transition: border-bottom 1.5s;
       }
     }
   }

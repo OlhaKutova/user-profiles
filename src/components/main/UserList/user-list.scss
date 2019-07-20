@@ -1,0 +1,43 @@
+.user-list-wrapper {
+  margin: 50px 5% 30px;
+  width: 90%;
+
+  .user-info {
+    display: flex;
+    width: 100%;
+
+    & > div {
+      width: 15%;
+      padding: 15px 0;
+      text-align: center;
+      color: #2f2f2f;
+      background: #ffffff;
+      border-bottom: 1px solid #c5c5c5;
+
+      &:last-child {
+        border-right: 1px solid #c5c5c5;
+      }
+      &:first-child {
+        border-left: 1px solid #c5c5c5;
+      }
+
+    }
+    .delete-btn {
+      width: 60px;
+      padding: 3px 0;
+      color: #ffffff;
+      font-size: 0.8rem;
+      text-transform: lowercase;
+      background: #a00000;
+    }
+
+    .edit-btn {
+      width: 60px;
+      padding: 3px 0;
+      color: #ffffff;
+      font-size: 0.8rem;
+      text-transform: lowercase;
+      background: #2d5578;
+    }
+  }
+}

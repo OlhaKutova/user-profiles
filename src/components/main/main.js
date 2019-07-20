@@ -1,28 +1,19 @@
 import React, {Component} from 'react';
 import './main.scss';
-import {connect} from "react-redux";
-import { getUserData } from '../../actions/user-data-actions';
+import SearchUserPanel from "./search-user-panel/search-user-panel";
+import SortLastLogin from "./sort-last-user-login/sort-last-login";
+import UserList from "./UserList/user-list";
 
 class Main extends Component {
 
    render() {
-      const { userData } = this.props;
       return (
-         <div>
-            {userData.map((item) => {
-               return (
-                  <span>{item.name}</span>
-               )
-            })}
-         </div>
+         <main>
+            <SearchUserPanel/>
+            <SortLastLogin/>
+            <UserList/>
+         </main>
       );
    }
 }
-
-const mapStateToProps = (state) => {
-   return {
-      userData: state.usersData.users
-   }
-};
-
-export default connect(mapStateToProps, { getUserData })(Main);
+export default Main;

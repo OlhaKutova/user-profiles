@@ -11,6 +11,7 @@ export const loginUser = (name, password, history) => {
             type: SET_ACTIVE_USER_DATA,
             payload: user
          });
+         alert('Login Successful!');
          history.push(`/profile/${user.id}`);
       } else {
          alert('Invalid login or password');

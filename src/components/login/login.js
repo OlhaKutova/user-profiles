@@ -40,7 +40,7 @@ class Login extends Component {
          new RegExp("^(?=.*[A-Z])(?=.*[0-9])(?=.{6,})");
 
       if (name === '' || name === null) {
-         alert("Error: Username cannot be blank!");
+         alert("Error: Username can not be blank!");
          return false;
       } else if (!strongRegex.test(password)) {
          alert("Error: Please enter correct password!");
@@ -55,7 +55,7 @@ class Login extends Component {
          <div className='login-wrapper'>
             <form className='form-login-wrapper' noValidate
                   onSubmit={(event) => this.submitHandler(event)}>
-               <h4 className='form-heading'>Login</h4>
+               <h4 className='form-heading'>Sign in</h4>
                <label className='input-login-wrapper'>
                   <span>Name:</span>
                   <input type="text"
@@ -82,7 +82,7 @@ class Login extends Component {
                </label>
                <input className='btn-submit'
                       type="submit"
-                      value="Submit"
+                      value="log in"
                       onChange={(event) => {
                          this.handleChange(event);
                       }}
