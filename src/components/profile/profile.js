@@ -8,6 +8,7 @@ class Profile extends Component {
 
    render() {
       const {isLoggedIn} = this.props.activeUser;
+      // const isLoggedIn = true;
 
       return (
         <Fragment>

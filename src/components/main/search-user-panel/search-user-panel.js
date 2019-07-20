@@ -1,31 +1,29 @@
 import React, {Component} from 'react';
 import './search-user-panel.scss';
+import {connect} from "react-redux";
+import {filterUserName} from "../../../actions/user-data-actions";
 
 class SearchUserPanel extends Component {
 
-   // changeInputDataHandler = (event) => {
-   //    this.props.setSearchString(event.target.value);
-   // };
-   //
-   // handleFilterButtonClick = () => {
-   //    this.props.filterMediaData();
-   // };
-
    render() {
+      const {userNameFilterInput, filterUserName} = this.props;
       return (
          <div className="search-panel-wrapper">
             <input type="text"
                    className="search-input"
-                   placeholder="search user name"
-                   // value={searchString}
-                   // onChange={(event) => {
-                   //    this.changeInputDataHandler(event);
-                   // }}
+                   placeholder="Search user name..."
+                   value={userNameFilterInput}
+                   onChange={filterUserName}
             />
-            <button >Filter</button>
          </div>
       );
    }
 }
 
-export default SearchUserPanel;
+const mapStateToProps = (state) => {
+   return {
+      userNameFilterInput: state.usersData.usernameFilterInput
+   }
+};
+
+export default connect(mapStateToProps, {filterUserName})(SearchUserPanel);

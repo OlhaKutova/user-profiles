@@ -43,7 +43,9 @@ class Login extends Component {
          alert("Error: Username can not be blank!");
          return false;
       } else if (!strongRegex.test(password)) {
-         alert("Error: Please enter correct password!");
+         alert(`Error: Please enter correct password! 
+          You have to input at least 6 characters, 
+          1 numeric digit and 1 uppercase letter`);
          return false;
       } else {
          return true;

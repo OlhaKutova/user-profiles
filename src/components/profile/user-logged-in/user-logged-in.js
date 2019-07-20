@@ -1,17 +1,18 @@
 import React, {Component} from 'react';
 import SearchUserPanel from "../../main/search-user-panel/search-user-panel";
 import SortLastLogin from "../../main/sort-last-user-login/sort-last-login";
-import UserList from "../../main/UserList/user-list";
 import './user-logged-in.scss';
 import {connect} from "react-redux";
+import UserListHeading from "../../main/user-list-heading/user-list-heading";
+import UserList from "../../main/user-list/user-list";
 
 class UserLoggedIn extends Component {
    render() {
-      const {name} = this.props.activeUser;
+      const {name, userImg} = this.props.activeUser;
       return (
-         <main className="profile-wrapper">
+         <div className="profile-wrapper">
             <div className="profile-info">
-               <img src="/images/user.jpg" alt="user"/>
+               <img src={userImg} alt="user"/>
                <div className="user-data">
                   <p>{name}</p>
                   <button>Log Out</button>
@@ -19,18 +20,12 @@ class UserLoggedIn extends Component {
             </div>
             <SearchUserPanel/>
             <SortLastLogin/>
-            <UserList>
-               <div><span>set timeframe login</span></div>
-               <div>
-                  <button className="edit-btn">edit</button>
-               </div>
-               <div>
-                  <button className="delete-btn">
-                     delete
-                  </button>
-               </div>
-            </UserList>
-         </main>
+            <div className="user-list-wrapper">
+               <UserListHeading type="profile" />
+               <UserList type="profile"/>
+            </div>
+
+         </div>
       );
    }
 }

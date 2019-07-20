@@ -1,0 +1,29 @@
+.user-log-out-wrapper {
+  margin: 5% auto;
+  padding: 40px 20px;
+  width: 450px;
+  text-align: center;
+  background: #315c83;
+  border-radius: 3px;
+  color: #eeeeee;
+
+  .login-link {
+    padding: 7px 10px;
+    margin: 0 10px;
+    text-transform: uppercase;
+    color: #f7f7f7;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+    background: #315c83;
+    border: 1px solid #f7f7f7;
+    border-radius: 3px;
+    box-shadow: 0 0 3px 0 #262626;
+
+    &:hover {
+      background: #254461;
+      color: #ffffff;
+      box-shadow: 0 0 5px 0 #262626;
+    }
+  }
+
+}

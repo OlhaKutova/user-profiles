@@ -4,17 +4,21 @@ export const loginUser = (name, password, history) => {
    return async (dispatch, getState) => {
       const users = getState().usersData.users;
       const user = users.find((item) => item.name === name);
-      const isPassValid = user.password === password;
 
-      if (isPassValid) {
-         dispatch({
-            type: SET_ACTIVE_USER_DATA,
-            payload: user
-         });
-         alert('Login Successful!');
-         history.push(`/profile/${user.id}`);
+      if (user) {
+         const isPassValid = user.password === password;
+         if (isPassValid) {
+            dispatch({
+               type: SET_ACTIVE_USER_DATA,
+               payload: user
+            });
+            alert('Login Successful!');
+            history.push(`/profile/${user.id}`);
+         } else {
+            alert('Error: Invalid name or password');
+         }
       } else {
-         alert('Invalid login or password');
+         alert('Error: Invalid name or password');
       }
    };
 };
