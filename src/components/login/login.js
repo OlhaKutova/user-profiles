@@ -40,7 +40,7 @@ class Login extends Component {
          new RegExp("^(?=.*[A-Z])(?=.*[0-9])(?=.{6,})");
 
       if (name === '' || name === null) {
-         alert("Error: Username can not be blank!");
+         alert("Error: User name can not be blank!");
          return false;
       } else if (!strongRegex.test(password)) {
          alert(`Error: Please enter correct password! 

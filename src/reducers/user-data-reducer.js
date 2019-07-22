@@ -2,12 +2,15 @@ import {
 	GET_USER_DATA,
 	SET_ACTIVE_USER_DATA,
 	SORT_LAST_LOGIN_USER,
-	USER_NAME_FILTER
+	USER_NAME_FILTER,
+	DELETE_USER,
+	SET_ACTIVE_EDITED_USER
 } from "../action-types/user-data-action-types";
 
 const initialState = {
 	users: [],
 	activeUser: {},
+	activeEditedUser: {},
 	usernameFilterInput: "",
 	lastLoginSortingType: ""
 };
@@ -40,6 +43,18 @@ export default (state = initialState, action) => {
 			return {
 				...state,
 				lastLoginSortingType: action.payload
+			};
+
+		case DELETE_USER:
+			return {
+				...state,
+				users: action.payload
+			};
+		case SET_ACTIVE_EDITED_USER:
+			console.log(action.payload)
+			return {
+				...state,
+				activeEditedUser: action.payload
 			};
 		default:
 			return state;

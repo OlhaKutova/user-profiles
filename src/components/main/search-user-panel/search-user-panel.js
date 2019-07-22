@@ -9,6 +9,7 @@ class SearchUserPanel extends Component {
       const {userNameFilterInput, filterUserName} = this.props;
       return (
          <div className="search-panel-wrapper">
+            <span>Search user name:</span>
             <input type="text"
                    className="search-input"
                    placeholder="Search user name..."

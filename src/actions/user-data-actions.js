@@ -1,4 +1,4 @@
-import { GET_USER_DATA, USER_NAME_FILTER, SORT_LAST_LOGIN_USER} from '../action-types/user-data-action-types';
+import { GET_USER_DATA, USER_NAME_FILTER, SORT_LAST_LOGIN_USER, DELETE_USER, SET_ACTIVE_EDITED_USER} from '../action-types/user-data-action-types';
 
 export const getUserData = () => {
    return async (dispatch) => {
@@ -32,5 +32,35 @@ export const sortUsersByLastLogin = () => {
          payload: newLastLoginSortingType
       });
    };
+};
 
+export const deleteUser = (id) => {
+   return (dispatch, getState) => {
+      const users = getState().usersData.users;
+      const newUsers = [...users];
+      const userIndex = newUsers.findIndex(elem => elem.id === id);
+      console.log(userIndex);
+
+      if (userIndex !== -1) {
+         newUsers.splice(userIndex, 1)
+      }
+
+      dispatch({
+         type: DELETE_USER,
+         payload: newUsers
+      })
+   }
+};
+
+export const setActiveEditedUser = (id) => {
+   return (dispatch, getState) => {
+      const users = getState().usersData.users;
+      const user = users.find(elem => elem.id === id);
+      console.log(user);
+
+      dispatch({
+         type: SET_ACTIVE_EDITED_USER,
+         payload: {...user}
+      })
+   }
 };

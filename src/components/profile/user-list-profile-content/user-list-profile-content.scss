@@ -1,0 +1,19 @@
+.btn-profile {
+  width: 60px;
+  padding: 3px 0;
+  color: #ffffff;
+  font-size: 0.8rem;
+  text-transform: lowercase;
+  box-shadow: 0 0 3px 0 #636363;
+}
+
+.delete-btn {
+  background: #a00000;
+  &:hover {
+    background: #720000;
+  }
+}
+
+.edit-btn {
+  background: #2d5578;
+}

@@ -17,24 +17,31 @@
     &:first-child {
       border-left: 1px solid #c5c5c5;
     }
-
   }
 
-  .delete-btn {
-    width: 60px;
-    padding: 3px 0;
-    color: #ffffff;
-    font-size: 0.8rem;
-    text-transform: lowercase;
-    background: #a00000;
+  & > .user-password {
+    position: relative;
   }
 
-  .edit-btn {
-    width: 60px;
-    padding: 3px 0;
+  & > .user-password .show-password {
+    display: none;
+  }
+
+  & > .user-password:hover {
+    cursor: help;
+  }
+
+  & > .user-password:hover .show-password {
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    padding: 10px;
     color: #ffffff;
-    font-size: 0.8rem;
-    text-transform: lowercase;
-    background: #2d5578;
+    text-align: center;
+    background: #335f88;
+    border-radius: 5px;
   }
 }

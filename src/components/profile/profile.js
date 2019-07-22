@@ -1,20 +1,26 @@
 import React, {Component, Fragment} from 'react';
+import {Route, withRouter} from 'react-router-dom';
 import UserLoggedIn from "./user-logged-in/user-logged-in";
 import './profile.scss';
 import {connect} from "react-redux";
 import UserLogOut from "./user-log-out/user-log-out";
+import EditUserData from "./edit-user-data/edit-user-data";
 
 class Profile extends Component {
 
    render() {
-      const {isLoggedIn} = this.props.activeUser;
-      // const isLoggedIn = true;
+      const {match} = this.props;
+      // const {isLoggedIn} = this.props.activeUser;
+      const isLoggedIn = true;
 
       return (
         <Fragment>
            {isLoggedIn
            ? <UserLoggedIn/>
-           : <UserLogOut/>}
+           : <UserLogOut/>
+           }
+           <Route path={`${match.path}/add`} component={EditUserData} />
+           <Route path={`${match.path}/edit/:editID`} component={EditUserData} />
         </Fragment>
       );
    }
@@ -26,4 +32,4 @@ const mapStateToProps = (state) => {
    }
 };
 
-export default connect(mapStateToProps, {})(Profile);
+export default connect(mapStateToProps, {})(withRouter(Profile));

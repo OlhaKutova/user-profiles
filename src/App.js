@@ -22,7 +22,7 @@ class App extends Component {
                <Wrapper>
                   <Switch>
                      <Route exact path='/' component={Main}/>
-                     <Route exact path='/profile/:id' component={Profile}/>
+                     <Route path='/profile/:id' component={Profile}/>
                      <Route exact path='/login' component={Login}/>
                      <Route path='*' component={ErrorMessage}/>
                   </Switch>
