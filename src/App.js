@@ -8,6 +8,7 @@ import ErrorMessage from "./components/error-message/error-message";
 import './App.scss';
 import {connect} from "react-redux";
 import {getUserData} from "./actions/user-data-actions";
+import Logout from "./components/logout/logout";
 
 class App extends Component {
 
@@ -16,6 +17,7 @@ class App extends Component {
    }
 
    render() {
+      const { isLoggedIn } = this.props.activeUser;
       return (
          <BrowserRouter>
             <div className="App">
@@ -23,7 +25,10 @@ class App extends Component {
                   <Switch>
                      <Route exact path='/' component={Main}/>
                      <Route path='/profile/:id' component={Profile}/>
-                     <Route exact path='/login' component={Login}/>
+                     {isLoggedIn
+                        ? <Logout/>
+                        : <Route exact path='/login' component={Login}/>
+                     }
                      <Route path='*' component={ErrorMessage}/>
                   </Switch>
                </Wrapper>
@@ -33,4 +38,10 @@ class App extends Component {
    }
 }
 
-export default connect(null, { getUserData })(App);
+const mapStateToProps = (state) => {
+   return {
+      activeUser: state.usersData.activeUser
+   }
+};
+
+export default connect(mapStateToProps, { getUserData })(App);

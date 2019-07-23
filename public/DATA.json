@@ -6,7 +6,7 @@
       "userImg": "https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png",
       "lastLoginTime": 0,
       "loginTimeFrame": "5pm",
-      "isLoggedIn": true
+      "isLoggedIn": false
    },
    {
       "id": 2,
@@ -15,7 +15,7 @@
       "userImg": "https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png",
       "lastLoginTime": 1563625154,
       "loginTimeFrame": "",
-      "isLoggedIn": true
+      "isLoggedIn": false
    },
    {
       "id": 3,
@@ -24,7 +24,7 @@
       "userImg": "https://cdn.pixabay.com/photo/2014/04/02/17/07/user-307993_960_720.png",
       "lastLoginTime": 1563601124,
       "loginTimeFrame": "",
-      "isLoggedIn": true
+      "isLoggedIn": false
    },
    {
       "id": 4,

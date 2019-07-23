@@ -1,9 +1,11 @@
 .user-info {
   display: flex;
   width: 100%;
+  justify-content: space-between;
 
   & > div {
-    width: 15%;
+    flex-basis: 150px;
+    flex-grow: 1;
     padding: 15px 0;
     text-align: center;
     color: #2f2f2f;
@@ -17,10 +19,22 @@
     &:first-child {
       border-left: 1px solid #c5c5c5;
     }
+
+    .user-name {
+      color: #1e3850;
+      font-size: 1.2rem;
+    }
   }
 
   & > .user-password {
     position: relative;
+
+    & > span:first-child {
+      color: #033e70;
+      font-size: 1.3rem;
+      font-weight: bold;
+      letter-spacing: 0.1rem;
+    }
   }
 
   & > .user-password .show-password {
@@ -31,17 +45,22 @@
     cursor: help;
   }
 
+  & > .user-password:hover span:first-child {
+    visibility: hidden;
+  }
+
   & > .user-password:hover .show-password {
     display: block;
     position: absolute;
-    top: 5px;
+    top: 6px;
     left: 0;
     z-index: 100;
     width: 100%;
     padding: 10px;
     color: #ffffff;
+    letter-spacing: 0.1rem;
     text-align: center;
-    background: #335f88;
+    background: rgba(37, 69, 101, 0.56);
     border-radius: 5px;
   }
 }

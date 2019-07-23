@@ -3,22 +3,19 @@ import {Route, withRouter} from 'react-router-dom';
 import UserLoggedIn from "./user-logged-in/user-logged-in";
 import './profile.scss';
 import {connect} from "react-redux";
-import UserLogOut from "./user-log-out/user-log-out";
-import EditUserData from "./edit-user-data/edit-user-data";
+import UserLogOut from "./user-logged-out/user-logged-out";
+import EditUserData from "./user-logged-in/edit-user-data/edit-user-data";
 
 class Profile extends Component {
 
    render() {
-      const {match} = this.props;
-      // const {isLoggedIn} = this.props.activeUser;
+      const { match } = this.props;
+      // const { isLoggedIn } = this.props.activeUser;
       const isLoggedIn = true;
 
       return (
         <Fragment>
-           {isLoggedIn
-           ? <UserLoggedIn/>
-           : <UserLogOut/>
-           }
+           {isLoggedIn ? <UserLoggedIn/> : <UserLogOut/>}
            <Route path={`${match.path}/add`} component={EditUserData} />
            <Route path={`${match.path}/edit/:editID`} component={EditUserData} />
         </Fragment>

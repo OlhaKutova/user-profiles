@@ -1,6 +1,7 @@
 import {
 	GET_USER_DATA,
 	SET_ACTIVE_USER_DATA,
+	USER_LOG_OUT,
 	SORT_LAST_LOGIN_USER,
 	USER_NAME_FILTER,
 	DELETE_USER,
@@ -34,6 +35,13 @@ export default (state = initialState, action) => {
 				users: newUsers,
 				activeUser: action.payload
 			};
+		case USER_LOG_OUT:
+			return {
+				...state,
+				users: action.payload.users,
+				activeUser: action.payload.activeUser
+			};
+
 		case USER_NAME_FILTER:
 			return {
 				...state,
@@ -51,7 +59,6 @@ export default (state = initialState, action) => {
 				users: action.payload
 			};
 		case SET_ACTIVE_EDITED_USER:
-			console.log(action.payload)
 			return {
 				...state,
 				activeEditedUser: action.payload

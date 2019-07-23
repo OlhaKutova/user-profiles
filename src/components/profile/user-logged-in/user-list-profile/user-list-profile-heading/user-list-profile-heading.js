@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 
-const HeadingUserListProfilePage = () => {
+const UserListProfileHeading = () => {
    return (
       <Fragment>
          <div><span>Set timeframe login</span></div>
@@ -11,4 +11,4 @@ const HeadingUserListProfilePage = () => {
    )
 };
 
-export default HeadingUserListProfilePage;
+export default UserListProfileHeading;

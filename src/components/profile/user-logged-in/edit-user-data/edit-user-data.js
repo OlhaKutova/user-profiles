@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 import "./edit-user-data.scss";
 import {withRouter} from "react-router-dom";
 import {connect} from "react-redux";
-import {setActiveEditedUser} from "../../../actions/user-data-actions";
+import {setActiveEditedUser} from "../../../../actions/user-data-actions";
 
 const initialState = {
    id: null,
    name: '',
    password: '',
-   userImg: 'https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png',
+   userImg: '',
    lastLoginTime: '',
    loginTimeFrame: ''
 };

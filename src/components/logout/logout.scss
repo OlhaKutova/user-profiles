@@ -1,0 +1,17 @@
+.btn-user-logout {
+  padding: 20px 50px;
+  height: 50px;
+  background: #3f75a4;
+  color: #ffffff;
+  letter-spacing: 0.1rem;
+  font-weight: 100;
+  font-size: 1rem;
+  text-shadow: 0 0 3px #023967;
+  border-radius: 0;
+  text-transform: uppercase;
+
+  &:hover {
+    background: #3f75a4;
+    border-bottom: 1px solid #ffffff;
+  }
+}

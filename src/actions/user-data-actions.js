@@ -56,11 +56,10 @@ export const setActiveEditedUser = (id) => {
    return (dispatch, getState) => {
       const users = getState().usersData.users;
       const user = users.find(elem => elem.id === id);
-      console.log(user);
 
       dispatch({
          type: SET_ACTIVE_EDITED_USER,
-         payload: {...user}
+         payload: user
       })
    }
 };

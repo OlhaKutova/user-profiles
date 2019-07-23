@@ -1,11 +1,12 @@
 import React, {Component, Fragment} from 'react';
 import {connect} from "react-redux";
 import Moment from 'react-moment';
-import './user-list.scss';
-import UserListProfileContent from "../../profile/user-list-profile-content/user-list-profile-content";
+import './user-list-main.scss';
+import UserListProfileContent from "../../profile/user-logged-in/user-list-profile/user-list-profile";
 
-class UserList extends Component {
+class UserListMain extends Component {
    render() {
+
       const {userData, userNameFilter, lastLoginSortingType} = this.props;
 
       let filteredUserData;
@@ -29,16 +30,19 @@ class UserList extends Component {
          <Fragment>
             {filteredUserData.map((item, index) => {
 
-               const passwordLength = item.password.length;
                let hiddenPassword = '';
-               for (let i = 1; i <= passwordLength; i++) {
+               for (let i = 1; i <= item.password.length; i++) {
                   hiddenPassword += '*';
                }
 
                return (
                   <div className="user-info" key={index}>
-                     <div><span>{item.name}</span></div>
-                     <div className="user-password">
+                     <div>
+                        <span className="user-name">
+                           {item.name}
+                        </span>
+                     </div>
+                     <div className="user-password" >
                         <span>{hiddenPassword}</span>
                         <span className="show-password">
                            {item.password}
@@ -72,4 +76,4 @@ const mapStateToProps = (state) => {
    }
 };
 
-export default connect(mapStateToProps, {})(UserList);
+export default connect(mapStateToProps, {})(UserListMain);

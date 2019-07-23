@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import './search-user-panel.scss';
+import './search-user-name-panel.scss';
 import {connect} from "react-redux";
 import {filterUserName} from "../../../actions/user-data-actions";
 
-class SearchUserPanel extends Component {
+class SearchUserNamePanel extends Component {
 
    render() {
       const {userNameFilterInput, filterUserName} = this.props;
@@ -27,4 +27,4 @@ const mapStateToProps = (state) => {
    }
 };
 
-export default connect(mapStateToProps, {filterUserName})(SearchUserPanel);
+export default connect(mapStateToProps, {filterUserName})(SearchUserNamePanel);

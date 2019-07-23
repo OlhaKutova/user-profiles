@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import './user-log-out.scss';
+import './user-logged-out.scss';
 
-const UserLogOut = () => {
+const UserLoggedOut = () => {
    return (
       <div className="user-log-out-wrapper">
          <p>You should
@@ -13,4 +13,4 @@ const UserLogOut = () => {
    )
 };
 
-export default UserLogOut;
+export default UserLoggedOut;

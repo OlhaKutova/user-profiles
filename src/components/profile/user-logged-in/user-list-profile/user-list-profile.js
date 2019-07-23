@@ -1,13 +1,13 @@
 import React, {Component, Fragment} from 'react';
 import { connect } from "react-redux";
-import { deleteUser } from "../../../actions/user-data-actions";
+import { deleteUser } from "../../../../actions/user-data-actions";
 import { withRouter } from "react-router-dom";
-import "./user-list-profile-content.scss";
+import "./user-list-profile.scss";
 
-class UserListProfileContent extends Component {
+class UserListProfile extends Component {
 
    clickEditBtnHandler = () => {
-      const { history, item} = this.props;
+      const { history, item } = this.props;
       history.push(`/profile/:id/edit/${item.id}`);
    };
 
@@ -27,7 +27,8 @@ class UserListProfileContent extends Component {
                </select>
             </div>
             <div>
-               <button className="btn-profile edit-btn" onClick={this.clickEditBtnHandler}>
+               <button className="btn-profile edit-btn"
+                       onClick={this.clickEditBtnHandler}>
                   edit
                </button>
             </div>
@@ -42,4 +43,4 @@ class UserListProfileContent extends Component {
    }
 }
 
-export default connect(null, {deleteUser})(withRouter(UserListProfileContent));
+export default connect(null, {deleteUser})(withRouter(UserListProfile));
