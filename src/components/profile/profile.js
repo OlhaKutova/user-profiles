@@ -10,8 +10,8 @@ class Profile extends Component {
 
    render() {
       const { match } = this.props;
-      // const { isLoggedIn } = this.props.activeUser;
-      const isLoggedIn = true;
+      const { isLoggedIn } = this.props.activeUser;
+      // const isLoggedIn = true;
 
       return (
         <Fragment>
