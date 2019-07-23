@@ -4,7 +4,7 @@ import UserLoggedIn from "./user-logged-in/user-logged-in";
 import './profile.scss';
 import {connect} from "react-redux";
 import UserLogOut from "./user-logged-out/user-logged-out";
-import EditUserData from "./user-logged-in/edit-user-data/edit-user-data";
+import EditUserData from "./user-logged-in/user-list-profile/edit-user-data/edit-user-data";
 
 class Profile extends Component {
 

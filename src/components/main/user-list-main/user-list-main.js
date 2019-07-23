@@ -1,8 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {connect} from "react-redux";
-import Moment from 'react-moment';
 import './user-list-main.scss';
-import UserListProfileContent from "../../profile/user-logged-in/user-list-profile/user-list-profile";
+import UserItem from "./user-item/user-item";
 
 class UserListMain extends Component {
    render() {
@@ -28,40 +27,13 @@ class UserListMain extends Component {
 
       return (
          <Fragment>
-            {filteredUserData.map((item, index) => {
-
-               let hiddenPassword = '';
-               for (let i = 1; i <= item.password.length; i++) {
-                  hiddenPassword += '*';
-               }
-
+            {filteredUserData.map((item) => {
                return (
-                  <div className="user-info" key={index}>
-                     <div>
-                        <span className="user-name">
-                           {item.name}
-                        </span>
-                     </div>
-                     <div className="user-password" >
-                        <span>{hiddenPassword}</span>
-                        <span className="show-password">
-                           {item.password}
-                        </span>
-                     </div>
-                     <div>
-                        {(item.lastLoginTime > 0)
-                           ? (<span>
-                         <Moment unix format="YYYY/MM/DD HH:mm">
-                           {item.lastLoginTime}
-                         </Moment>
-                        </span>)
-                           : (<span>no login yet</span>)
-                        }
-                     </div>
-                     <div><span>{item.loginTimeFrame}</span></div>
-                     {(this.props.type === 'profile') ? <UserListProfileContent item={item}/> : null}
-                  </div>
-               )
+                     <UserItem key={item.id}
+                               item={item}
+                               type={this.props.type}
+                     />
+                  )
             })}
          </Fragment>
       );

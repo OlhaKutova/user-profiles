@@ -5,7 +5,8 @@ import {
 	SORT_LAST_LOGIN_USER,
 	USER_NAME_FILTER,
 	DELETE_USER,
-	SET_ACTIVE_EDITED_USER
+	SET_ACTIVE_EDITED_USER,
+	SAVE_EDITED_USER_DATA
 } from "../action-types/user-data-action-types";
 
 const initialState = {
@@ -62,6 +63,11 @@ export default (state = initialState, action) => {
 			return {
 				...state,
 				activeEditedUser: action.payload
+			};
+		case SAVE_EDITED_USER_DATA:
+			return  {
+				...state,
+				users: action.payload
 			};
 		default:
 			return state;

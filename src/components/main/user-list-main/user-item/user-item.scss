@@ -1,0 +1,54 @@
+.user-info {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  & > div {
+    flex-basis: 150px;
+    flex-grow: 1;
+    padding: 15px 0;
+    text-align: center;
+    color: #2f2f2f;
+    background: #ffffff;
+    border-bottom: 1px solid #c5c5c5;
+
+    &:last-child {
+      border-right: 1px solid #c5c5c5;
+    }
+
+    &:first-child {
+      border-left: 1px solid #c5c5c5;
+    }
+
+    .user-name {
+      color: #1e3850;
+      font-size: 1.2rem;
+    }
+  }
+
+  & > .user-password {
+    position: relative;
+
+    & > span:first-child {
+      color: #033e70;
+      font-size: 1.3rem;
+      font-weight: bold;
+      letter-spacing: 0.1rem;
+    }
+
+    & > .password-shown {
+      position: absolute;
+      top: 5px;
+      padding: 3px;
+      font-size: 0.8rem;
+      letter-spacing: 0.1rem;
+      color: grey;
+      border-radius: 3px;
+      border: 1px solid #cecece;
+    }
+  }
+
+  & > .user-password:hover {
+    cursor: help;
+  }
+}

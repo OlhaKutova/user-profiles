@@ -7,12 +7,11 @@ class PersonalUserDetails extends Component {
    render() {
       const { name, userImg } = this.props.activeUser;
       const { userLogOut } = this.props;
-      const defaultUserImg = "/images/user.jpg";
 
       return (
          <div className="profile-info">
             <div className="user-img">
-               <img src={userImg === null || userImg === "" ? defaultUserImg : userImg}
+               <img src={userImg}
                     alt="user"
                />
             </div>

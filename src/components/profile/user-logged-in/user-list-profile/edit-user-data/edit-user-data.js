@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import "./edit-user-data.scss";
 import {withRouter} from "react-router-dom";
 import {connect} from "react-redux";
-import {setActiveEditedUser} from "../../../../actions/user-data-actions";
+import {saveEditedUserData, setActiveEditedUser} from "../../../../../actions/user-data-actions";
 
 const initialState = {
    id: null,
@@ -42,8 +42,14 @@ class EditUserData extends Component {
    };
 
    clickCancelBtnHandler = () => {
-      const {history} = this.props;
-      history.push(`/profile/:id`);
+      const {history, activeUser} = this.props;
+      history.push(`/profile/${activeUser.id || 'noID'}`);
+   };
+
+   handleSaveClick = () => {
+      const {history, saveEditedUserData, activeUser} = this.props;
+      saveEditedUserData(this.state);
+      history.push(`/profile/${activeUser.id  || 'noID'}`);
    };
 
    render() {
@@ -88,7 +94,11 @@ class EditUserData extends Component {
                      />
                   </label>
                   <div className="edit-btn-wrapper">
-                     <button>SAVE CHANGES</button>
+                     <button onClick={() => {
+                        this.handleSaveClick()
+                     }}>
+                        SAVE CHANGES
+                     </button>
                      <button className="btn-cancel"
                              onClick={this.clickCancelBtnHandler}>
                         CANCEL
@@ -103,8 +113,10 @@ class EditUserData extends Component {
 
 const mapStateToProps = (state) => {
    return {
-      activeEditedUser: state.usersData.activeEditedUser
+      activeEditedUser: state.usersData.activeEditedUser,
+      activeUser: state.usersData.activeUser,
+
    }
 };
 
-export default connect(mapStateToProps, {setActiveEditedUser})(withRouter(EditUserData));
+export default connect(mapStateToProps, {setActiveEditedUser, saveEditedUserData})(withRouter(EditUserData));

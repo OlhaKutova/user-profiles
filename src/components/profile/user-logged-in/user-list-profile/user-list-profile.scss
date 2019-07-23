@@ -1,3 +1,48 @@
+.time-picker-wrapper {
+  position: relative;
+}
+
+.rc-time-picker-panel {
+  position: absolute;
+  top: 378px!important;
+  height: 200px;
+  overflow-y: scroll;
+  background: #f3f3f3;
+
+  ul:first-child::before {
+    content: 'Time';
+  }
+
+  .rc-time-picker-panel-select {
+    ul {
+      list-style: none;
+      li {
+        padding: 3px 0;
+      }
+      li:hover {
+        cursor: pointer;
+        color: red;
+      }
+    }
+  }
+
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .rc-time-picker-panel-combobox {
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+    justify-content: space-around;
+
+  }
+}
+
+
+
+
 .btn-profile {
   width: 60px;
   padding: 3px 0;

@@ -2,6 +2,8 @@ import React, {Component, Fragment} from 'react';
 import { connect } from "react-redux";
 import { deleteUser } from "../../../../actions/user-data-actions";
 import { withRouter } from "react-router-dom";
+import moment from 'moment';
+import TimePicker from 'rc-time-picker';
 import "./user-list-profile.scss";
 
 class UserListProfile extends Component {
@@ -16,15 +18,12 @@ class UserListProfile extends Component {
 
       return (
          <Fragment>
-            <div>
-               <select>
-                  <option value="12 AM - 3 AM">12 AM - 3 AM</option>
-                  <option value="4 AM - 7 AM">4 AM - 7 AM</option>
-                  <option value="8 AM - 11 AM">8 AM - 11 AM</option>
-                  <option value="12 AM - 3 PM">12 AM - 3 PM</option>
-                  <option value="4 PM - 7 PM">4 PM - 7 PM</option>
-                  <option value="8 PM - 12 PM">8 PM - 12 PM</option>
-               </select>
+            <div className="time-picker-wrapper">
+               <TimePicker classname="rc-time-picker"
+                           defaultValue={moment()}
+                           showSecond={false}
+                           minuteStep={5}
+               />
             </div>
             <div>
                <button className="btn-profile edit-btn"

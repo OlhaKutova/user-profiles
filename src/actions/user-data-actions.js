@@ -1,13 +1,16 @@
-import { GET_USER_DATA, USER_NAME_FILTER, SORT_LAST_LOGIN_USER, DELETE_USER, SET_ACTIVE_EDITED_USER} from '../action-types/user-data-action-types';
+import {
+   GET_USER_DATA, USER_NAME_FILTER, SORT_LAST_LOGIN_USER,
+   DELETE_USER, SET_ACTIVE_EDITED_USER, SAVE_EDITED_USER_DATA
+} from '../action-types/user-data-action-types';
 
 export const getUserData = () => {
    return async (dispatch) => {
-         const response = await fetch("/DATA.json");
-         const data = await response.json();
-         dispatch({
-            type: GET_USER_DATA,
-            payload: data
-         });
+      const response = await fetch("/DATA.json");
+      const data = await response.json();
+      dispatch({
+         type: GET_USER_DATA,
+         payload: data
+      });
    };
 };
 
@@ -22,7 +25,7 @@ export const sortUsersByLastLogin = () => {
    return async (dispatch, getState) => {
       const prevLastLoginSortingType = getState().usersData.lastLoginSortingType;
       let newLastLoginSortingType;
-      if (prevLastLoginSortingType === '' || prevLastLoginSortingType==='asc') {
+      if (prevLastLoginSortingType === '' || prevLastLoginSortingType === 'asc') {
          newLastLoginSortingType = 'desc'
       } else {
          newLastLoginSortingType = 'asc'
@@ -60,6 +63,19 @@ export const setActiveEditedUser = (id) => {
       dispatch({
          type: SET_ACTIVE_EDITED_USER,
          payload: user
+      })
+   }
+};
+
+export const saveEditedUserData = (user) => {
+   return (dispatch, getState) => {
+      const users = getState().usersData.users;
+      const newUsers = [...users];
+      const userIndex = users.findIndex(elem => elem.id === user.id);
+      newUsers[userIndex] = user;
+      dispatch({
+         type: SAVE_EDITED_USER_DATA,
+         payload: newUsers
       })
    }
 };
