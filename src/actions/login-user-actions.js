@@ -42,5 +42,3 @@ export const userLogOut = () => {
       alert('Logout Successful !');
    }
 };
-
-

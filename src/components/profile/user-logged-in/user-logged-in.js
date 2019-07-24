@@ -5,6 +5,7 @@ import UserListMainHeading from "../../main/user-list-main/user-list-main-headin
 import UserListMain from "../../main/user-list-main/user-list-main";
 import PersonalUserDetails from "./user-list-profile/personal-user-details/personal-user-details";
 import './user-logged-in.scss';
+import AddNewUserBtn from "./user-list-profile/edit-user-data/add-new-user/add-new-user";
 
 class UserLoggedIn extends Component {
    render() {
@@ -13,6 +14,7 @@ class UserLoggedIn extends Component {
             <PersonalUserDetails/>
             <SearchUserNamePanel/>
             <SortLastLogin/>
+            <AddNewUserBtn/>
             <div className="user-list-wrapper">
                <UserListMainHeading type="profile"/>
                <UserListMain type="profile"/>

@@ -6,7 +6,8 @@ import {
 	USER_NAME_FILTER,
 	DELETE_USER,
 	SET_ACTIVE_EDITED_USER,
-	SAVE_EDITED_USER_DATA
+	SAVE_EDITED_USER_DATA,
+	SAVE_NEW_USER_DATA
 } from "../action-types/user-data-action-types";
 
 const initialState = {
@@ -29,7 +30,8 @@ export default (state = initialState, action) => {
 			let newUsers = [...state.users];
 			let newUser = {...state.users[userIndex]};
 			newUser.isLoggedIn = true;
-			newUser.lastLoginTime = new Date().getTime();
+			newUser.isLoggedIn = true;
+			newUser.lastLoginTime = new Date().getTime() / 1000;
 			newUsers[userIndex] = newUser;
 			return {
 				...state,
@@ -53,7 +55,6 @@ export default (state = initialState, action) => {
 				...state,
 				lastLoginSortingType: action.payload
 			};
-
 		case DELETE_USER:
 			return {
 				...state,
@@ -65,6 +66,11 @@ export default (state = initialState, action) => {
 				activeEditedUser: action.payload
 			};
 		case SAVE_EDITED_USER_DATA:
+			return  {
+				...state,
+				users: action.payload
+			};
+		case SAVE_NEW_USER_DATA:
 			return  {
 				...state,
 				users: action.payload

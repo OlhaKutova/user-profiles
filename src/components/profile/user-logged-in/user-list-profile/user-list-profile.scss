@@ -10,7 +10,7 @@
   background: #f3f3f3;
 
   ul:first-child::before {
-    content: 'Time';
+    content: '';
   }
 
   .rc-time-picker-panel-select {

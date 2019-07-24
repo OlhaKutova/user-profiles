@@ -66,6 +66,10 @@
         }
       }
 
+      button[disabled] {
+        background: grey;
+        cursor: no-drop;
+      }
     }
   }
 }

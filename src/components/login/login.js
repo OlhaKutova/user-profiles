@@ -36,20 +36,21 @@ class Login extends Component {
    };
 
    validateFields = (name, password) => {
-      const strongRegex =
-         new RegExp("^(?=.*[A-Z])(?=.*[0-9])(?=.{6,})");
-
-      if (name === '' || name === null) {
-         alert("Error: User name can not be blank!");
-         return false;
-      } else if (!strongRegex.test(password)) {
-         alert(`Error: Please enter correct password! 
-          You have to input at least 6 characters, 
-          1 numeric digit and 1 uppercase letter`);
-         return false;
+      const {users} = this.props;
+      let isValid = false;
+      let userIndex = users.findIndex(item => {
+         return item.name === name;
+      });
+      if (userIndex > -1) {
+         if (users[userIndex]["password"] === password) {
+            isValid = true
+         }  else {
+            alert('Error: invalid name or password');
+         }
       } else {
-         return true;
+         alert('Error: invalid name or password');
       }
+      return isValid;
    };
 
    render() {
@@ -95,4 +96,10 @@ class Login extends Component {
    }
 }
 
-export default connect(null, {loginUser})(withRouter(Login));
+const mapStateToProps = (state) => {
+   return {
+      users: state.usersData.users
+   }
+};
+
+export default connect(mapStateToProps, {loginUser})(withRouter(Login));

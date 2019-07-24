@@ -5,7 +5,7 @@
       "password": "Denis1",
       "userImg": "https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png",
       "lastLoginTime": 0,
-      "loginTimeFrame": "5pm",
+      "loginTimeFrame": "7am - 9am",
       "isLoggedIn": false
    },
    {
@@ -13,8 +13,8 @@
       "name": "Bogdan",
       "password": "Bogdan2",
       "userImg": "https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png",
-      "lastLoginTime": 1563625154,
-      "loginTimeFrame": "",
+      "lastLoginTime": 1563979986,
+      "loginTimeFrame": "10am - 12pm",
       "isLoggedIn": false
    },
    {
@@ -22,8 +22,8 @@
       "name": "Marina",
       "password": "Marina3",
       "userImg": "https://cdn.pixabay.com/photo/2014/04/02/17/07/user-307993_960_720.png",
-      "lastLoginTime": 1563601124,
-      "loginTimeFrame": "",
+      "lastLoginTime": 1563979432,
+      "loginTimeFrame": "1pm - 3pm",
       "isLoggedIn": false
    },
    {
@@ -32,7 +32,7 @@
       "password": "Valentin4",
       "userImg": "https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png",
       "lastLoginTime": 1563622351,
-      "loginTimeFrame": "",
+      "loginTimeFrame": "4pm - 6pm",
       "isLoggedIn": false
    },
    {
@@ -41,7 +41,7 @@
       "password": "Angela5",
       "userImg": "https://cdn.pixabay.com/photo/2014/04/02/17/07/user-307993_960_720.png",
       "lastLoginTime": 1563620974,
-      "loginTimeFrame": "",
+      "loginTimeFrame": "7pm - 9pm",
       "isLoggedIn": false
    },
    {
@@ -50,7 +50,7 @@
       "password": "Vladislav6",
       "userImg": "https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png",
       "lastLoginTime": 1563968159,
-      "loginTimeFrame": "",
+      "loginTimeFrame": "10pm - 11pm",
       "isLoggedIn": false
    },
    {
@@ -59,7 +59,7 @@
       "password": "Valentina7",
       "userImg": "https://cdn.pixabay.com/photo/2014/04/02/17/07/user-307993_960_720.png",
       "lastLoginTime": 0,
-      "loginTimeFrame": "",
+      "loginTimeFrame": "3am - 4am",
       "isLoggedIn": false
    },
    {
@@ -68,7 +68,7 @@
       "password": "Christina8",
       "userImg": "https://cdn.pixabay.com/photo/2014/04/02/17/07/user-307993_960_720.png",
       "lastLoginTime": 1563095171,
-      "loginTimeFrame": "",
+      "loginTimeFrame": "5am - 6am",
       "isLoggedIn": false
    }
 ]

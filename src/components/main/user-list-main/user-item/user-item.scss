@@ -39,12 +39,12 @@
     & > .password-shown {
       position: absolute;
       top: 5px;
-      padding: 3px;
+      padding: 5px;
       font-size: 0.8rem;
       letter-spacing: 0.1rem;
-      color: grey;
+      color: #f3f3f3;
       border-radius: 3px;
-      border: 1px solid #cecece;
+      background: rgba(0, 0, 0, 0.5);
     }
   }
 

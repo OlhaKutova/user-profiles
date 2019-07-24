@@ -1,6 +1,7 @@
 import {
    GET_USER_DATA, USER_NAME_FILTER, SORT_LAST_LOGIN_USER,
-   DELETE_USER, SET_ACTIVE_EDITED_USER, SAVE_EDITED_USER_DATA
+   DELETE_USER, SET_ACTIVE_EDITED_USER, SAVE_EDITED_USER_DATA,
+   SAVE_NEW_USER_DATA
 } from '../action-types/user-data-action-types';
 
 export const getUserData = () => {
@@ -57,14 +58,20 @@ export const deleteUser = (id) => {
 
 export const setActiveEditedUser = (id) => {
    return (dispatch, getState) => {
+      if (id === undefined) {
+         return dispatch({
+            type: SET_ACTIVE_EDITED_USER,
+            payload: {}
+         });
+      }
       const users = getState().usersData.users;
       const user = users.find(elem => elem.id === id);
 
       dispatch({
          type: SET_ACTIVE_EDITED_USER,
          payload: user
-      })
-   }
+      });
+   };
 };
 
 export const saveEditedUserData = (user) => {
@@ -75,6 +82,21 @@ export const saveEditedUserData = (user) => {
       newUsers[userIndex] = user;
       dispatch({
          type: SAVE_EDITED_USER_DATA,
+         payload: newUsers
+      })
+   }
+};
+
+export const saveNewUserData = (user) => {
+   return (dispatch, getState) => {
+      const users = getState().usersData.users;
+      let maxID = 1;
+      users.forEach(item => {
+         if (item.id > maxID) maxID = item.id;
+      });
+      const newUsers = [...users, { ...user, id: ++maxID }];
+      dispatch({
+         type: SAVE_NEW_USER_DATA,
          payload: newUsers
       })
    }
